@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  loadbalancer:
+    build: .
+    ports: 
+     - 80:80
+    networks:
+     - net
+
+  api01:
+    image: httpd:2.4
+    networks:
+     - net
+  
+  api02:
+    image: httpd:2.4
+    networks:
+     - net
+
+networks:
+  net:
+
